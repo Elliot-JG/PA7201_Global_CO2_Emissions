@@ -1,0 +1,97 @@
+---
+title: "PA7201_CO2_emissions"
+date: "20/11/2020"
+output:
+  pdf_document: default
+  word_document: default
+---
+```{r, echo = FALSE, message = FALSE}
+library(tinytex)
+library(knitr)
+library(tidyverse)
+library(png)
+source("C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/plot_gas.R")
+setwd("C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/")
+```
+
+
+```{r, echo = FALSE, message = FALSE}
+plot_gas("ee-chart_AUS.csv", 
+         "CO column density", 
+         "(mol/m^2)",
+         "Australia")
+
+
+#img_AUS <- readPNG()
+```
+
+Figure 1: Time series of CO column density (mol/m^2^) throughout 2020 in Australia (top)
+Area averaged map of CO column density (mol/m^2^) throughout 2020 in Australia (bottom)
+
+```{r, echo = FALSE, message = FALSE}
+plot_gas("ee-chart_BR.csv", 
+         "CO column density", 
+         "(mol/m^2)",
+         "Brazil")
+
+#img_BR <- readPNG()
+```
+
+Figure 2: Time series of CO column density (mol/m^2^) throughout 2020 in Brazil (top)
+Area averaged map of CO column density (mol/m^2^) throughout 2020 in Brazil (bottom)
+
+```{r, echo = FALSE, message = FALSE}
+plot_gas("ee-chart_DRC.csv", 
+         "CO column density", 
+         "(mol/m^2)",
+         "DRC")
+
+#img_DRC <- readPNG()
+```
+
+Figure 3: Time series of CO column density (mol/m^2^) throughout 2020 in Democratic Republic of Congo (DRC) (top)
+Area averaged map of CO column density (mol/m^2^) throughout 2020 in DRC (bottom)
+
+```{r, echo = FALSE, message = FALSE}
+plot_gas("ee-chart_ID.csv", 
+         "CO column density", 
+         "(mol/m^2)",
+         "Indonesia")
+
+#img_ID <- readPNG()
+```
+
+Figure 4: Time series of CO column density (mol/m^2^) throughout 2020 in Indonesia (top)
+Area averaged map of CO column density (mol/m^2^) throughout 2020 in Indonesia (bottom)
+
+```{r, echo = FALSE, message = FALSE}
+plot_gas("ee-chart_IN.csv", 
+         "CO column density", 
+         "(mol/m^2)",
+         "India")
+
+#img_IN <- readPNG()
+```
+
+Figure 5: Time series of CO column density (mol/m^2^) throughout 2020 in India (top)
+Area averaged map of CO column density (mol/m^2^) throughout 2020 in India (bottom)
+
+```{r, echo = FALSE, message = FALSE}
+plot_gas("ee-chart_UG.csv", 
+         "CO column density", 
+         "(mol/m^2)",
+         "India")
+
+#img_UG <- readPNG()
+```
+
+Figure 6: Time series of CO column density (mol/m^2^) throughout 2020 in Uganda (top)
+Area averaged map of CO column density (mol/m^2^) throughout 2020 in Uganda (bottom)
+
+## Analysis
+
+CO column density is shown in 6 regions around the globe. All regions display a large range in CO with some seasonal patterns visible. 
+
+### Australia
+
+Australia displays maximum CO in January (0.045 mol/m2) and October (0.039 mol/m2). January, 2020 brought a series of bushfires throughout Australia, leading to increased CO throughout the region. CO levels were stable from February to August, ranging from 0.018 - 0.024. Australia underwent a series of 'lockdowns' from March to October to halt the spread of COVID-19. Minor decreases in CO throughout this period may be caused by this action, but further analysis is needed to confirm that. Bushfire season for 2020-2021 begins again in September and this is apparent from the time series. Increased C) at this period is a clear signal of burning vegetation throughout the region     
