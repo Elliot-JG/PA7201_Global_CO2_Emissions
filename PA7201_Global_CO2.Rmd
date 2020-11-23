@@ -1,11 +1,12 @@
 ---
+title: PA7201 - Analysis of CO in 6 regions around the World
 output:
   pdf_document:
     fig_caption: yes        
     includes:  
       in_header: my_header.tex 
-
 ---
+
 ```{r, echo = FALSE, message = FALSE}
 library(tinytex)
 library(knitr)
@@ -15,6 +16,24 @@ source("C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/p
 setwd("C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/")
 ```
 
+## Analysis
+
+
+Carbon monoxide (CO) is a poisonous gas, released from incomplete combustion. The major source of CO is burnt fuel, originating from car exhausts or fire.
+
+Eastern Australia displays maximum CO column density (CD) in January (0.045 mol/m^2^) and October (0.039 mol/m^2^) (figure 1). January 2020 brought a series of bushfires throughout Australia, leading to increased CO throughout the region (Filkov *et al*., 2020). Bushfire season for 2020-2021 begins again in September and this is apparent due to increased CO CD during this period. Burning occurred in a concentrated region in South East Australia between Canberra and Melbourne. 
+
+Forest fires have raged throughout 2020 in Brazil (IPAM, 2020), but the most extreme events occurred in September and October as CO increased to 0.1 mol/m^2^ (figure 2). Outside these events, Brazil has a CO CD of approximately 0.03 mol/m^2^. Increased CO CD coincides with the Amazon basin to the west, further suggesting that wildfires were the source of the CO (IPAM, 2020). The surrounding coastline to the east displays significantly lower C0 levels (0.2-0.4 mol/m^2^), suggesting a lack of wildfires in this region. 
+
+The Congo basin displays a unique signal of CO CD (figure 3). CO rises gradually from May to August before decreasing rapidly. The DRC does not show a ‘baseline’ density as CO changes sporadically throughout 2020. The cause of this CO is identical to that of Brazil, wildfires (Jenner, 2020). Interestingly, that also brings about similar levels of CO that were present in Brazil (~0.04-0.1 mol/m^2^). Increased CO CD to the West (0.7-0.8 mol/m^2^) suggests this was the location of the wildfires. CO decreases eastward throughout the region, until a minimum (0.02 mol/m^2^) is found at the eastern border.  
+
+CO CD in the Indonesian peatland region of Kalimantan is highlighted by a trough from May to September (figure 4), possibly due to lockdowns enforced for the COVID-19 pandemic. Presence of localised fires throughout Kalimantan in July (Reuters, 2020) raised CO CD from 0.024 to 0.028 mol/m^2^. Maximum CO CD is around Singapore and Jakarta, possibly demonstrating the effect of increased urbanization on CO levels (Dewi *et al*., 2019). 
+
+Northern India presents a noisy dataset. CO CD falls within the range 0.03 to 0.04 mol/m^2^ though outliers consistently fall below 0.03 mol/m^2^ (figure 5). CO CD has increased to 0.045 mol/m^2^ since October with outliers increasing it >0.05 mol/m^2^ due to forest fires in Uttarakhand and Uttar Pradesh (Azad, 2020). This signal is reflected in the area-averaged map, where elevated CO CD occurs in North India. 
+
+CO CD in Kampala and Jinja, Uganda ranges from 0.03 to 0.05 mol/m^2^ (figure 6). COVID-19 may have caused a decrease below 0.03 mol/m^2^ from May to June. Uganda’s maximum CO CD is on the western border, suggesting that DRC may be responsible for a fraction of Uganda’s CO CD. An outlier within the region is Kampala as an increased concentration of wood stoves and cooking fires release excess carbon monoxide into atmosphere (Bede-Ojimadu *et al*., 2020). Minimum CO CD in the region coincides with Bokoro Wildlife Reserve and Mount Elgon National Park to the east and South east respectively. 
+
+
 ```{r, fig.width=6, fig.height=4, echo = FALSE, message = FALSE}
 plot_gas("ee-chart_AUS.csv", 
          "CO column density", 
@@ -22,7 +41,7 @@ plot_gas("ee-chart_AUS.csv",
          "Australia")
 ```
 
-![Time series of CO column density (mol/m^2^) throughout 2020 in Australia (top)
+![Time series of CO column density (mol/m^2^) throughout 2020 in eastern Australia (147.00 LON, -35.00 LAT, 154.00 LON, -22.00 LAT) (top)
 Area averaged map of CO column density (mol/m^2^) throughout 2020 in Australia (bottom)](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/Aus_trans.png){width=80%}
 
 
@@ -33,10 +52,9 @@ plot_gas("ee-chart_BR.csv",
          "(mol/m^2)",
          "Brazil")
 
-#img_BR <- readPNG()
 ```
 
-![Time series of CO column density (mol/m^2^) throughout 2020 in Brazil (top)
+![Time series of CO column density (mol/m^2^) throughout 2020 in Pantanal, Brazil (-60.00 LON, -20.00 LAT, -50.00 LON, -10.00 LAT) (top)
 Area averaged map of CO column density (mol/m^2^) throughout 2020 in Brazil (bottom)](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/Brazil_trans.png){width=70%}
 
 
@@ -47,10 +65,9 @@ plot_gas("ee-chart_DRC.csv",
          "(mol/m^2)",
          "DRC")
 
-#img_DRC <- readPNG()
 ```
 
-![Time series of CO column density (mol/m^2^) throughout 2020 in Democratic Republic of Congo (DRC) (top)
+![Time series of CO column density (mol/m^2^) throughout 2020 in the Congo Basin (15.0 LON, -6.0 LAT, 25.0 LON, 0.0 LAT) (top)
 Area averaged map of CO column density (mol/m^2^) throughout 2020 in DRC (bottom)](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/DRC.png){width=70%}
 
 
@@ -61,10 +78,9 @@ plot_gas("ee-chart_ID.csv",
          "(mol/m^2)",
          "Indonesia")
 
-#img_ID <- readPNG()
 ```
 
-![Time series of CO column density (mol/m^2^) throughout 2020 in Indonesia (top)
+![Time series of CO column density (mol/m^2^) throughout 2020 in the Indonesian Peatlands (112.0 LON, -3.00 LAT,115.0 LON, 0.00 LAT) (top)
 Area averaged map of CO column density (mol/m^2^) throughout 2020 in Indonesia (bottom)](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/Indonesia_trans.png)
 
 
@@ -75,10 +91,9 @@ plot_gas("ee-chart_IN.csv",
          "(mol/m^2)",
          "India")
 
-#img_IN <- readPNG()
 ```
 
-![Time series of CO column density (mol/m^2^) throughout 2020 in India (top)
+![Time series of CO column density (mol/m^2^) throughout 2020 in North India (73.00 LON, 26.00 LAT, 79.00 LON, 32.00 LAT) (top)
 Area averaged map of CO column density (mol/m^2^) throughout 2020 in India (bottom)](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/India_tran_April.png){width=70%}
 
 
@@ -89,47 +104,28 @@ plot_gas("ee-chart_UG.csv",
          "(mol/m^2)",
          "Uganda")
 
-#img_UG <- readPNG()
 ```
 
-![Time series of CO column density (mol/m^2^) throughout 2020 in Uganda (top)
+![Time series of CO column density (mol/m^2^) throughout 2020 in Kampala and Jinja, Uganda (32.0 LON, 0.0 LAT, 34.0 LON, 2.0 LAT) (top)
 Area averaged map of CO column density (mol/m^2^) throughout 2020 in Uganda (bottom)](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/Uganda_trans.png){width=70%}
 
 
+ 
 
+## References
+Azad, S. (2020) ‘Unusual forest fire season: Around 140 hectares of forest cover gutted in over 95 forest fire incidents’ *The Times of India*, India. Accessed: 22/11/2020. Available at: https://timesofindia.indiatimes.com/city/dehradun/unusual-forest-fire-season-around-140-hectares-of-forest-cover-gutted-in-over-95-forest-fire-incidents/articleshow/79156673.cms
 
+Bede-Ojimadu, O. and Orisakwe, O.E. (2020) 'Exposure to Wood Smoke and Associated Health Effects in Sub-Saharan Africa: A Systematic Review', *Annals of global health*, 86(1), pp. 32.
 
+Dewi, B.N., Syafei, A.D. and Ciptaningayu, T.N. (2019) 'Pedestrian exposure to Nitrogen Dioxide (NO2) and Carbon Monoxide (CO): A case study of Surabaya, Indonesia', *IOP conference series. Earth and environmental science*, 340, pp. 1-8.
 
+Filkov, A.I., Ngo, T., Matthews, S., Telfer, S. and Penman, T.D. (2020) 'Impact of Australia's catastrophic 2019/20 bushfire season on communities and environment. Retrospective analysis and current trends', *Journal of Safety Science and Resilience*, 1(1), pp. 44-56.
 
-## Analysis
+IPAM. (2020) ‘The air is unbearable: Health Impacts of Deforestation-Related fires in the Brazilian Amazon’, *IPAM*, Brazil, Accessed: 22/11/2020. Available at: https://ipam.org.br/bibliotecas/the-air-is-unbearable-health-impacts-of-deforestation-related-fires-in-the-brazilian-amazon/
 
+Jenner, L. (2020) ‘Both Angola and the Democratic Republic of the Congo experiencing high numbers of agricultural fires’ *NASA*, USA, Accessed: 22/11/2020. Available at: https://www.nasa.gov/image-feature/goddard/2020/both-angola-and-the-democratic-republic-of-the-congo-experiencing-high-numbers-of
 
-Carbon monoxide (CO) is a poisonous gas, released from incomplete combustion. The major source of CO is burnt fuel, originating from car exhausts or fire.
+Jiang, Y., Zhou, L. and Raghavendra, A. (2020) 'Observed changes in fire patterns and possible drivers over Central Africa', *Environmental research letters*, 15(9), pp. 1-12.
 
-Australia displays maximum CO column density (CD) in January (0.045 mol/m2) and October (0.039 mol/m2). January 2020 brought a series of bushfires throughout Australia, leading to increased CO throughout the region (Filkov et al., 2020). CO levels were stable from February to August, ranging from 0.018 - 0.024. Bushfire season for 2020-2021 begins again in September and this is apparent due to increased CO CD during this period. Burning occurred in a concentrated region in South East Australia between Canberra and Melbourne. 
+Reuters. (2020) ‘Indonesian province declares state of emergency over forest fires’, *Reuters*, Accessed: 23/11/2020. Available at: https://news.trust.org/item/20200701084928-kp482
 
-Forest fires have raged throughout 2020 in Brazil (IPAM, 2020), but the most extreme events occurred in September and October as CO increased to 0.1 mol/m2. Outside these events, Brazil has a CO CD of approximately 0.03 mol/m2. Increased CO CD coincides with the Amazon basin to the west, further suggesting that wildfires were the source of the CO (IPAM, 2020). The surrounding coastline to the east displays significantly lower C0 levels (0.2-0.4 mol/m2), suggesting a lack of wildfires in this region. 
-
-The DRC displays a unique signal of CO CD. CO rises gradually from May to August before decreasing rapidly. The DRC does not show a ‘baseline’ density as CO changes sporadically throughout 2020. The cause of this CO is identical to that of Brazil, wildfires (Jenner, 2020). Interestingly, that also brings about similar levels of CO that were present in Brazil (~0.04-0.1). Increased CO CD to the West (0.7-0.8 mol/m2) suggests this was the location of the wildfires. CO decreases eastward throughout the region, until a minimum (0.02 mol/m2) is found at the eastern border.  
-
-CO CD in Indonesia is highlighted by a trough from May to September, possibly due to lockdowns enforced for the COVID-19 pandemic. Due to a lack of wildfires or burning, there are no sudden peaks in the data and the region displays a narrow range (0.01 mol/m2) of CO CD. Maximum CO CD is around Singapore and Jakarta, demonstrating the effect of urbanization on CO levels (Dewi et al., 2019). 
-
-India presents an extremely noisy dataset. CO CD falls within the range 0.03 to 0.04 though outliers consistently fall below 0.03 mol/m^2. CO CD has increased to 0.045 since October with outliers increasing it >0.05 mol/m2. The highest levels of CO CD are found throughout North India. Here, forest fires raged in Uttarakh and and Uttar Pradesh throughout May 2020 (Azad, 2020).
-
-CO CD in Uganda ranges from 0.03 to 0.05. COVID-19 may have caused a decrease below 0.03 from May to June.  Uganda’s maximum CO CD is on its border with DRC, suggesting that DRC may be responsible for a fraction of Uganda’s increased CO CD. An outlier within the region is Kampala as an increased concentration of wood stoves and cooking fires release excess carbon monoxide into atmosphere (Bede-Ojimadu et al., 2020). Minimum CO CD in the region coincides with Bokoro Wildlife Reserve and Mount Elgon National Park to the east and South east respectively. 
-
-### References
-
-Azad, S (2020) ‘Unusual forest fire season: Around 140 hectares of forest cover gutted in over 95 forest fire incidents’ The Times of India, India. Accessed: 22/11/2020. Available at: https://timesofindia.indiatimes.com/city/dehradun/unusual-forest-fire-season-around-140-hectares-of-forest-cover-gutted-in-over-95-forest-fire-incidents/articleshow/79156673.cms
-
-Bede-Ojimadu, O. and Orisakwe, O.E. (2020) 'Exposure to Wood Smoke and Associated Health Effects in Sub-Saharan Africa: A Systematic Review', Annals of global health, 86(1), pp. 32.
-
-Dewi, B.N., Syafei, A.D. and Ciptaningayu, T.N. (2019) 'Pedestrian exposure to Nitrogen Dioxide (NO2) and Carbon Monoxide (CO): A case study of Surabaya, Indonesia', IOP conference series. Earth and environmental science, 340, pp. 1-8.
-
-Filkov, A.I., Ngo, T., Matthews, S., Telfer, S. and Penman, T.D. (2020) 'Impact of Australia's catastrophic 2019/20 bushfire season on communities and environment. Retrospective analysis and current trends', Journal of Safety Science and Resilience, 1(1), pp. 44-56.
-
-IPAM, (2020) ‘The air is unbearable: Health Impacts of Deforestation-Related fires in the Brazilian Amazon’, IPAM, Accessed: 22/11/2020. Available at: https://ipam.org.br/bibliotecas/the-air-is-unbearable-health-impacts-of-deforestation-related-fires-in-the-brazilian-amazon/
-
-Jenner (2020) ‘Both Angola and the Democratic Republic of the Congo experiencing high numbers of agricultural fires’ NASA, Accessed: 22/11/2020. Available at: https://www.nasa.gov/image-feature/goddard/2020/both-angola-and-the-democratic-republic-of-the-congo-experiencing-high-numbers-of
-
-Jiang, Y., Zhou, L. and Raghavendra, A. (2020) 'Observed changes in fire patterns and possible drivers over Central Africa', Environmental research letters, 15(9), pp. 1-12.
