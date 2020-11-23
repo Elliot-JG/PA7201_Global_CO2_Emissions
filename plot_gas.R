@@ -26,6 +26,7 @@ table <- plot_init %>%
   )
 
 #Plot 
+
 plot <- table %>%
   ggplot(aes(
     
@@ -49,6 +50,7 @@ plot <- table %>%
   labs(
     x = "Month in 2020", 
     y = expression(Daily~average~CO~column~density~(mol/m^2)))
+
   
 
   return(plot)
