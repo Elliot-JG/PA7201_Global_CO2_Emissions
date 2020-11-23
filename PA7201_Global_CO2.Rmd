@@ -1,9 +1,10 @@
 ---
-title: "PA7201_CO2_emissions"
-date: "20/11/2020"
 output:
-  pdf_document: default
-  word_document: default
+  pdf_document:
+    fig_caption: yes        
+    includes:  
+      in_header: my_header.tex 
+
 ---
 ```{r, echo = FALSE, message = FALSE}
 library(tinytex)
@@ -14,19 +15,19 @@ source("C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/p
 setwd("C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/")
 ```
 
-
-```{r, echo = FALSE, message = FALSE}
+```{r, fig.width=6, fig.height=4, echo = FALSE, message = FALSE}
 plot_gas("ee-chart_AUS.csv", 
          "CO column density", 
          "(mol/m^2)",
          "Australia")
 ```
-![Australia](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/Aus_trans.png)
 
-Figure 1: Time series of CO column density (mol/m^2^) throughout 2020 in Australia (top)
-Area averaged map of CO column density (mol/m^2^) throughout 2020 in Australia (bottom)
+![Time series of CO column density (mol/m^2^) throughout 2020 in Australia (top)
+Area averaged map of CO column density (mol/m^2^) throughout 2020 in Australia (bottom)](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/Aus_trans.png){width=80%}
 
-```{r, echo = FALSE, message = FALSE}
+
+
+```{r, fig.width=6, fig.height=4, echo = FALSE, message = FALSE}
 plot_gas("ee-chart_BR.csv", 
          "CO column density", 
          "(mol/m^2)",
@@ -35,12 +36,12 @@ plot_gas("ee-chart_BR.csv",
 #img_BR <- readPNG()
 ```
 
-![Brazil](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/Brazil_trans.png)
+![Time series of CO column density (mol/m^2^) throughout 2020 in Brazil (top)
+Area averaged map of CO column density (mol/m^2^) throughout 2020 in Brazil (bottom)](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/Brazil_trans.png){width=70%}
 
-Figure 2: Time series of CO column density (mol/m^2^) throughout 2020 in Brazil (top)
-Area averaged map of CO column density (mol/m^2^) throughout 2020 in Brazil (bottom)
 
-```{r, echo = FALSE, message = FALSE}
+
+```{r, fig.width=6, fig.height=4, echo = FALSE, message = FALSE}
 plot_gas("ee-chart_DRC.csv", 
          "CO column density", 
          "(mol/m^2)",
@@ -49,12 +50,12 @@ plot_gas("ee-chart_DRC.csv",
 #img_DRC <- readPNG()
 ```
 
-![DRC](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/DRC.png)
+![Time series of CO column density (mol/m^2^) throughout 2020 in Democratic Republic of Congo (DRC) (top)
+Area averaged map of CO column density (mol/m^2^) throughout 2020 in DRC (bottom)](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/DRC.png){width=70%}
 
-Figure 3: Time series of CO column density (mol/m^2^) throughout 2020 in Democratic Republic of Congo (DRC) (top)
-Area averaged map of CO column density (mol/m^2^) throughout 2020 in DRC (bottom)
 
-```{r, echo = FALSE, message = FALSE}
+
+```{r, fig.width=6, fig.height=4, echo = FALSE, message = FALSE}
 plot_gas("ee-chart_ID.csv", 
          "CO column density", 
          "(mol/m^2)",
@@ -63,12 +64,12 @@ plot_gas("ee-chart_ID.csv",
 #img_ID <- readPNG()
 ```
 
-![Indonesia](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/Indonesia_trans.png)
+![Time series of CO column density (mol/m^2^) throughout 2020 in Indonesia (top)
+Area averaged map of CO column density (mol/m^2^) throughout 2020 in Indonesia (bottom)](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/Indonesia_trans.png)
 
-Figure 4: Time series of CO column density (mol/m^2^) throughout 2020 in Indonesia (top)
-Area averaged map of CO column density (mol/m^2^) throughout 2020 in Indonesia (bottom)
 
-```{r, echo = FALSE, message = FALSE}
+
+```{r, fig.width=6, fig.height=4, echo = FALSE, message = FALSE}
 plot_gas("ee-chart_IN.csv", 
          "CO column density", 
          "(mol/m^2)",
@@ -77,12 +78,12 @@ plot_gas("ee-chart_IN.csv",
 #img_IN <- readPNG()
 ```
 
-![India](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/India_tran_April.png)
+![Time series of CO column density (mol/m^2^) throughout 2020 in India (top)
+Area averaged map of CO column density (mol/m^2^) throughout 2020 in India (bottom)](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/India_tran_April.png){width=70%}
 
-Figure 5: Time series of CO column density (mol/m^2^) throughout 2020 in India (top)
-Area averaged map of CO column density (mol/m^2^) throughout 2020 in India (bottom)
 
-```{r, echo = FALSE, message = FALSE}
+
+```{r, fig.width=6, fig.height=4, echo = FALSE, message = FALSE}
 plot_gas("ee-chart_UG.csv", 
          "CO column density", 
          "(mol/m^2)",
@@ -91,10 +92,10 @@ plot_gas("ee-chart_UG.csv",
 #img_UG <- readPNG()
 ```
 
-![Uganda](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/Uganda_trans.png)
+![Time series of CO column density (mol/m^2^) throughout 2020 in Uganda (top)
+Area averaged map of CO column density (mol/m^2^) throughout 2020 in Uganda (bottom)](C:/Users/44792/Desktop/Google Earth Engine/PA7201_Global_CO2_Emissions/Images/Uganda_trans.png){width=70%}
 
-Figure 6: Time series of CO column density (mol/m^2^) throughout 2020 in Uganda (top)
-Area averaged map of CO column density (mol/m^2^) throughout 2020 in Uganda (bottom)
+
 
 
 
@@ -117,7 +118,7 @@ India presents an extremely noisy dataset. CO CD falls within the range 0.03 to 
 
 CO CD in Uganda ranges from 0.03 to 0.05. COVID-19 may have caused a decrease below 0.03 from May to June.  Uganda’s maximum CO CD is on its border with DRC, suggesting that DRC may be responsible for a fraction of Uganda’s increased CO CD. An outlier within the region is Kampala as an increased concentration of wood stoves and cooking fires release excess carbon monoxide into atmosphere (Bede-Ojimadu et al., 2020). Minimum CO CD in the region coincides with Bokoro Wildlife Reserve and Mount Elgon National Park to the east and South east respectively. 
 
-References
+### References
 
 Azad, S (2020) ‘Unusual forest fire season: Around 140 hectares of forest cover gutted in over 95 forest fire incidents’ The Times of India, India. Accessed: 22/11/2020. Available at: https://timesofindia.indiatimes.com/city/dehradun/unusual-forest-fire-season-around-140-hectares-of-forest-cover-gutted-in-over-95-forest-fire-incidents/articleshow/79156673.cms
 
